@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 // use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Gate;
+// use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -51,7 +51,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         Log::info('PostController@storeが実行されました');
-        Gate::authorize('test');
+        // Gate::authorize('test');
         $validated = $request->validate([
             'title' => 'required|max:20',
             'body' => 'required|max:400',

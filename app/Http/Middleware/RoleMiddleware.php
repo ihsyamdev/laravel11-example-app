@@ -16,12 +16,12 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        Log::info('RoleMiddlewareが実行されました');
-        if (auth()->user()->role == 'admin') {
-            Log::info('adminロールのユーザーがアクセスしました');
-            return $next($request);
-        }
-        return redirect()->route('dashboard');
-        // return $next($request);
+        // Log::info('RoleMiddlewareが実行されました');
+        // if (auth()->user()->role == 'admin') {
+        //     Log::info('adminロールのユーザーがアクセスしました');
+        //     return $next($request);
+        // }
+        // return redirect()->route('dashboard');
+        return $next($request);
     }
 }
