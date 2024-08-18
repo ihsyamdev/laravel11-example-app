@@ -6,7 +6,7 @@
         },
         {
             "src": "/public/**",
-            "use": "@vercel-php@0.7.1"
+            "use": "vercel-php@0.7.1"
         }
     ],
     "routes": [
