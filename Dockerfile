@@ -118,8 +118,14 @@ RUN rsync -ar /var/www/html/public-npm/ /var/www/html/public/ \
     && rm -rf /var/www/html/public-npm \
     && chown -R www-data:www-data /var/www/html/public
 
+# composerの不足分をインストール
+RUN composer install
+
 # mysqlのマイグレーションを実行
 RUN php artisan migrate --force
+
+# Seederでテストデータを投入
+RUN php artisan db:seed --force
 
 # 5. Setup Entrypoint
 EXPOSE 8080
